@@ -1,0 +1,86 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="/static/css/principal_css.css">
+  </head>
+  <body>
+
+  <div id="agrupar">
+
+    <header id="cabecera">
+      <h1>HERRAMIENTAS DE RED</h1>
+    </header>
+
+    <nav id="menu">
+      <ul>
+        <li><a href="/">Principal</a></li>
+        <li><a href="/subnetting/">Subnetting</a></li>
+        <li><a href="/awifi/">Analizador Wifi</a></li>
+        <li><a href="/contacto/">Contacto</a></li>
+      </ul>
+    </nav>
+
+    <section id="seccion1">
+      <form action='http://127.0.0.1:5000/ping/'method='post'>
+        <h4>PING</h4>
+        <label> IP Address: </label>
+          <input type="text" size="15" name="ip">
+        <label> Count: </label>
+          <input type="text" size="5" name="repeat">
+        <input type="submit" value="Enviar">
+      </form>
+
+      <form action='/traceroute/' method='post'>
+        <h4>TRACEROUTE</h4>
+          <label> IP Address: </label>
+            <input type="text" size="15" name="ip">
+          <input type="submit" value="Enviar">
+      </form>
+
+      <form action='/nslookup/' method='post'>
+        <h4>NS LOOKUP</h4>
+          <label> IP or Domain: </label>
+            <input type="text" size="30" name="ip">
+        <input type='submit' value="Enviar">
+      </form>
+
+      <form action='/mac_lookup/' method='post'>
+        <h4>MAC ADDRESS LOOKUP</h4>
+          <label> Mac Address: </label>
+            <input type="text" size="30" name="ip">
+        <input type="submit" value="Enviar">
+      </form>
+    </section>
+
+    <section id="seccion2">
+      <article>
+        {% if ping %}
+          {%  for line in ping %}
+        <p>{{line}}</p>
+          {% endfor %}
+
+         {% elif traceroute %}
+            {% for line in traceroute %}
+              <p>{{line}}</p>
+            {% endfor %}
+
+         {% elif nslook_up %}
+            {% for line in nslook_up %}
+              <p>{{line}}</p>
+            {% endfor %}
+
+          {% else %}
+              {% for line in mac_address %}
+                <p>{{line}}</p>
+              {% endfor %}
+        {% endif %}
+      </artice>
+    </section>
+
+    <footer>
+      <small> Derechos reservados </small>
+    </footer>
+
+   </div>
+
+  </body>
+</html>
