@@ -1,0 +1,53 @@
+*{
+  margin:0px;
+  padding: 1px;
+}
+
+body{
+  text-align: center;
+}
+
+header, nav, section, article, figcaption, figure, hgroup, aside,footer{
+  display:block;
+}
+
+h2{
+  font: bold 30px mifuente, verdana , sans-serif;
+}
+
+#agrupar_sub{
+  width:800px;
+  padding:5px;
+  text-align: left;
+  margin:5px auto;
+}
+
+#seccion_sub{
+  text-align:center;
+}
+
+input[type="text"]{
+  width:20%;
+  padding: 6px 10px;
+  margin: 10px 0;
+  box-sizing: border-box;
+  border-radius: 5px;
+  border:none;
+}
+
+input[type=sumit]{
+  background-color: rgb(255, 153, 51);
+  border:none;
+  color:white;
+  padding: 16px 32px;
+  text-decoration: none;
+  margin: 4px 2px;
+  cursor:pointer;
+  border-radius:5px;
+  font: bold 15px mifuente, verdana, sans-serif;
+}
+
+@font-face{
+  font-family:'mifuente';
+  src:url('Ubuntu-Light.ttf');
+}
