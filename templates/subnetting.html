@@ -1,13 +1,29 @@
 <html>
 <head>
   <title>Subnetting</title>
+  <link rel="stylesheet" href="/static/css/subnetting.css">
 </head>
 
 <body>
-  
+<div>
  {% include 'barra.html' %}
-  <h1>Prueba</h1>
 
+</div>
+
+ <div id="agrupar_sub">
+  <section id="seccion_sub">
+    <h2>Ingrese los datos para subnetear</h2>
+    <form action="/subnetting/" method="post">
+      <label>Red</label>
+      <input type="text" name="red" size="15">
+      <label>Mascara</label>
+      <input type="text" name="mascara" size="15">
+      <label>Nueva Mascara</label>
+      <input type="text" name="nueva_mascara" size="15">
+      <input type="submit" value="Subnetear">
+    </form>
+  </section>
+</div>
 </body>
 
 </html>
